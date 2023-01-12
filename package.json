@@ -14,11 +14,13 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.7",
+    "@rainbow-me/rainbowkit": "^0.8.1",
     "@reduxjs/toolkit": "^1.9.1",
     "animate.css": "^4.1.1",
     "antd": "^5.1.4",
     "axios": "^1.2.1",
     "classnames": "^2.3.2",
+    "ethers": "^5.7.2",
     "formik": "^2.2.9",
     "nprogress": "^0.2.0",
     "react": "^18.2.0",
@@ -32,6 +34,7 @@
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.4.2",
     "skeleton-screen-css": "^1.1.0",
+    "wagmi": "^0.9.6",
     "yup": "^0.32.11"
   },
   "devDependencies": {

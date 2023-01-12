@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 // COMPONENTS
 import { Dropdown } from "antd";
-import { AppButton, TextButton } from "@/components/core";
+import { AppButton, TextButton, HandleConnection } from "@/components/core";
 
 // ASSETS
 import { staticImg } from "@/assets/images";
@@ -37,20 +37,7 @@ const AppBar = () => {
             classes={["btn--hide", "btn--show-laptop"]}
           />
 
-          <AppButton
-            title={"BSC Mainnet"}
-            hasIcon={true}
-            iconUrl={staticIcons.BINANCE_ICON}
-            imgAlt={"Binance Icon"}
-            classes={["btn--hide", "btn--show-laptop"]}
-          />
-
-          <AppButton
-            title={"3FZbgi29.........V8eyH"}
-            hasIcon={false}
-            color={"#174AFF"}
-            classes={["btn--hide", "btn--show-laptop"]}
-          />
+          <HandleConnection />
 
           <div className="app-bar__square">
             <img src={staticImg.SQUARE_ICON} draggable={false} alt="square-icon" />

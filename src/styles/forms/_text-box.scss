@@ -17,7 +17,8 @@
     @apply
       px-5
       w-full
-      laptop:w-[75%]
+      laptop:w-[60%]
+      desktop:w-[75%]
       h-full
       outline-none
       border-none
@@ -50,7 +51,8 @@
 
     &--small {
       @apply
-        w-[25%]
+        w-[40%]
+        desktop:w-[25%]
         font-bold
         text-xs
         tracking-[-0.02em]

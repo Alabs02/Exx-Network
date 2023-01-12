@@ -1,17 +1,75 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
+
+// ETHERS
+import { BigNumber, ethers } from "ethers";
 
 // COMPONENTS
 import { AppProgress, TextBox } from "@/components/forms";
 
+// SERVICES
+import { $number } from "@/services";
+
+// HOOKS
+import { useAccount, useContractRead } from "wagmi";
+
+// CONTRACT
+import { PRESALE_SMART_CONTRACT, USDT_SMART_CONTRACT } from "@/contracts";
+
 const AccountSection = () => {
+  const { address } = useAccount();
+
+  const { data: balanceOf } = useContractRead({
+    ...USDT_SMART_CONTRACT,
+    functionName: "balanceOf",
+    args: [address ?? "0x0"],
+  });
+
+  const { data: symbol } = useContractRead({
+    ...USDT_SMART_CONTRACT,
+    functionName: "symbol",
+  });
+
+  const { data: raisedBNB } = useContractRead({
+    ...PRESALE_SMART_CONTRACT,
+    functionName: "raisedBNB",
+  });
+
+  const { data: hardCap } = useContractRead({
+    ...PRESALE_SMART_CONTRACT,
+    functionName: "hardCap",
+  });
+
+  const _balanceOf =
+    balanceOf && $number.convertToNumber((balanceOf as any)._hex  ?? BigNumber.from(0));
+
+  const _raisedBnb: BigNumber = raisedBNB ? (raisedBNB as BigNumber) : BigNumber.from(0);
+  const _hardCap: BigNumber = hardCap ? (hardCap as BigNumber) : BigNumber.from(0);
+
+  const percentage: number =
+    (Number(ethers.utils.formatUnits(_raisedBnb)) /
+      Number(ethers.utils.formatUnits(_hardCap))) *
+    100;
+
+  const [time, setTime] = useState(new Date().toLocaleTimeString());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(new Date().toLocaleTimeString());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <Fragment>
       <section className="acct-section">
-        <div className="acct-section__badge">Your bal: 0.0000034 USDT</div>
+        <div className="acct-section__badge">
+          Your bal: {`${_balanceOf ?? 0.0} ${symbol ?? 'USDT'}`}
+        </div>
 
         <div className="acct-section__card">
           <div className="acct-section__card-header">
-            <div className="acct-section__card-heading">10:20:30</div>
+            <div className="acct-section__card-heading">{time}</div>
 
             <div className="acct-section__card-badge">Pending</div>
           </div>
@@ -20,7 +78,7 @@ const AccountSection = () => {
             <div className="progress-section__title">Sale Progress</div>
 
             <div className="progress-section__container">
-              <AppProgress percent={45} />
+              <AppProgress percent={percentage ?? 0} />
             </div>
 
             <div className="card-form">

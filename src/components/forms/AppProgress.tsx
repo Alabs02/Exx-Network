@@ -5,11 +5,11 @@ export interface IAppProgressProps {
   percent: number;
 }
 
-const AppProgress: FC<IAppProgressProps> = () => {
+const AppProgress: FC<IAppProgressProps> = ({ percent }) => {
   return (
     <Fragment>
       <div className="app-progress">
-        <div style={{ width: "45%" }} className="app-progress__bar"></div>
+        <div style={{ width: `${percent}%` }} className="app-progress__bar"></div>
       </div>
     </Fragment>
   );
