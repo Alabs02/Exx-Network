@@ -1,0 +1,69 @@
+// SCSS COLORS
+
+// WHITE SHADES
+$brand-white-default: #FFFFFF;
+$brand-white-translucent: rgba(255, 255, 255, 0.4);
+// PRIMARY SHADES
+$primary-default: #174AFF;
+$primary-light: #E8F2FF;
+$primary-dark: #1D2A65;
+$primary-darker: #141830;
+$primary-border: #0077FE;
+$primary-translucent: rgba(0, 119, 254, 0.25);
+
+// SECONDARY SHADES
+$secondary-default: #111315;
+$secondary-translucent: rgba(17, 19, 21, 0.63);
+
+// ACCENT
+$accent-default: #FFCB67;
+
+// BRAND BLACK
+$brand-black-default: #000000;
+$brand-black-translucent: rgba(0, 0, 0, 0.28);
+
+// GREEN
+$brand-green-default: #00D9AC;
+
+// TEAL
+$brand-teal-light: #C5F3F0;
+$brand-teal-lighter: #D3F4F9;
+
+// BLUE GRAY
+$blue-gray-light: #A0A5BA;
+$blue-gray-default: #000E48;  
+
+:root {
+  // WHITE SHADES
+  --brand-white-default: #FFFFFF;
+  --brand-white-translucent: rgba(255, 255, 255, 0.4);
+  // PRIMARY SHADES
+  --primary-default: #174AFF;
+  --primary-light: #E8F2FF;
+  --primary-dark: #1D2A65;
+  --primary-darker: #141830;
+  --primary-border: #0077FE;
+  --primary-translucent: rgba(0, 119, 254, 0.25);
+
+  // SECONDARY SHADES
+  --secondary-default: #111315;
+  --secondary-translucent: rgba(17, 19, 21, 0.63);
+
+  // ACCENT
+  --accent-default: #FFCB67;
+
+  // BRAND BLACK
+  --brand-black-default: #000000;
+  --translucent: rgba(0, 0, 0, 0.28);
+
+  // GREEN
+  --green-default: #00D9AC;
+
+  // TEAL
+  --teal-light: #C5F3F0;
+  --teal-lighter: #D3F4F9;
+
+  // BLUE GRAY
+  --blue-gray-light: #A0A5BA;
+  --blue-gray-default: #000E48;
+}

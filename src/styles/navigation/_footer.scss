@@ -1,0 +1,80 @@
+.footer {
+  color: rgba(0, 14, 72, 0.7);
+
+  @apply
+    w-full
+    flex
+    items-center
+    justify-between
+    pt-5
+    px-6
+    pb-24
+    laptop:py-[30px]
+    laptop:px-0
+    laptop:gap-x-10
+    laptop:justify-center;
+
+  &__copy {
+    @apply
+      text-xs
+      leading-4
+      opacity-60
+      laptop:hidden;
+  }
+
+  &__links {
+    @apply
+      flex
+      gap-x-[14px]
+      laptop:gap-x-10
+      items-center
+      justify-between;
+
+  }
+
+  &__link {
+    @apply
+      text-xs
+      relative
+      leading-4
+      laptop:text-base
+      laptop:leading-8
+      laptop:font-medium;
+
+    &--hide {
+      display: none !important;
+    }
+
+    @media (min-width: 1024px) {
+      &--visible {
+        display: flex !important;
+      }
+
+      &--laptop-hide {
+        display: none !important;
+      }
+    }
+
+    span {
+      color: rgba(0, 14, 72, 0.7);
+
+      &:hover {
+        color: rgba(0, 14, 72, 0.55);
+      }
+
+      @apply
+        laptop:text-blue-gray-light
+        hover:laptop:text-blue-gray-default;
+    }
+  }
+
+  &__divider {
+    @apply
+      h-3
+      border-[0.5px]
+      border-solid
+      laptop:hidden;
+
+    border-color: rgba(0, 14, 72, 0.4)
+  }
+}

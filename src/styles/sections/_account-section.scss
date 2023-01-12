@@ -1,0 +1,195 @@
+.acct-section {
+  @apply
+    block
+    w-full
+    h-full;
+
+  &__badge {
+    @apply
+      px-7
+      w-auto
+      mb-[10px]
+      h-[50px]
+      rounded-[10px]
+      overflow-hidden
+      bg-brand-white-translucent
+
+      hidden
+      laptop:inline-flex
+      items-center
+      
+      font-bold
+      text-[14px]
+      leading-[18px]
+      tracking-[-0.02em]
+      subpixel-antialiased
+      text-primary-default;
+  }
+
+  &__card {
+    @apply
+      p-5
+      block
+      rounded-[10px]
+      overflow-hidden
+      bg-brand-white-default;
+
+    &-header {
+      @apply
+        flex
+        items-center
+        justify-between;
+    }
+
+    &-heading {
+      @apply
+        text-2xl
+        font-bold
+        leading-8
+        font-space-grotesk
+        tracking-[-0.02em]
+        text-black;
+    }
+
+    &-badge {
+      @apply
+        px-6
+        py-[13px]
+        rounded-[20px]
+        overflow-hidden
+        bg-accent-default
+        
+        font-bold
+        text-[14px]
+        leading-[18px]
+        tracking-[-0.02em]
+        text-primary-dark;
+    }
+
+    &-body {
+      @apply
+        w-full
+        h-full
+        mt-11;
+    }
+  }
+}
+
+.progress-section {
+  &__title {
+    @apply
+      font-medium
+      text-[14px]
+      leading-[18px]
+      tracking-[-0.02em]
+      font-space-grotesk
+      text-secondary-translucent;
+  }
+
+  &__container {
+    @apply
+      mt-[10px]
+      mb-10;
+  }
+}
+
+.card-form {
+  @apply
+    block;
+
+  &__label {
+    @apply
+      font-bold
+      leading-6
+      text-[18px]
+      text-black
+      tracking-[-0.02em]
+      font-space-grotesk
+  }
+
+  &__panel {
+    @apply
+      my-[10px]
+      flex
+      gap-x-[10px]
+      items-center;
+  }
+
+  &__btn {
+    @apply
+      h-[54px]
+      px-5
+      laptop:px-[42px]
+      rounded-[10px]
+      overflow-hidden
+
+      cursor-pointer
+      border-none
+      outline-none
+
+      grid
+      place-items-center
+
+      shadow-sm
+      hover:shadow-lg
+      focus:shadow-lg
+
+      font-bold
+      text-[14px]
+      text-white
+      leading-[18px]
+      tracking-[-0.02em]
+      
+      bg-primary-default;
+  }
+
+  &__desc {
+    @apply
+      flex
+      gap-x-[10px]
+      items-center;
+  }
+
+  &__copy {
+    @apply
+      font-medium
+      text-[14px]
+      leading-[18px]
+      tracking-[-0.02em]
+      text-secondary-translucent;
+
+    span {
+      @apply
+        font-bold
+        text-secondary-default;
+    }
+  }
+
+  &__footer {
+    @apply
+      mt-10;
+
+    &-heading {
+      @apply
+        mb-[10px]
+        font-bold
+        text-[14px]
+        leading-[18px]
+        tracking-[-0.02em]
+        text-secondary-default;
+    }
+
+    &-copy {
+      @apply
+        text-xs
+        tracking-[-0.02em]
+        text-secondary-translucent;
+
+      span {
+        @apply
+          font-bold
+          text-secondary-default;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.app-progress {
+  @apply
+    w-full
+    h-[10px]
+    relative
+    shadow-sm
+    rounded-[10px]
+    overflow-hidden
+    bg-primary-light;
+
+  &__bar {
+    @apply
+      h-full
+      rounded-[10px]
+      bg-primary-default;
+  }
+}

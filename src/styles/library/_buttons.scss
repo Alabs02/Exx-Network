@@ -1,0 +1,108 @@
+.btn {
+  @apply
+    m-0
+    p-0
+    cursor-pointer
+    border-none
+    outline-none
+    focus:border-none
+    focus:outline-none;
+
+  &--icon {
+    @apply
+      bg-[transparent];
+
+    img {
+      @apply
+        w-full
+        h-full
+        object-contain
+        laptop:hidden;
+    }
+  }
+
+  &--hide {
+    display: none !important;
+  }
+
+  @media (min-width: 1024px) {
+    &--show-laptop {
+      display: flex !important;
+    }
+  }
+}
+
+.app-button {
+  @apply
+    w-auto
+    px-9
+    h-[54px]
+    rounded-[10px]
+
+    flex
+    gap-x-[10px]
+    items-center
+    overflow-hidden
+
+    cursor-pointer
+    shadow-sm
+    shadow-[transparent]
+
+    border
+    border-solid
+    border-[transparent]
+    outline-none
+
+    transition-colors
+    duration-700
+
+    bg-brand-white-translucent
+  
+    hover:border-primary-border
+    focus:border-primary-border;
+
+  &__title {
+    @apply
+      font-bold
+      text-[14px]
+      leading-5
+      tracking-[-0.02em]
+      text-secondary-default
+      subpixel-antialiased;
+  }
+}
+
+.text-button {
+  @apply
+    w-auto
+    px-9
+    h-[54px]
+    rounded-[10px]
+
+    flex
+    gap-x-[10px]
+    items-center
+    overflow-hidden
+
+    bg-[transparent]
+    border-none
+    outline-none
+
+    cursor-pointer
+    
+    hover:bg-brand-white-translucent-50
+    focus:bg-brand-white-translucent-50;
+
+  &__title {
+    @apply
+      font-bold
+      font-space-grotesk
+
+      text-[14px]
+      leading-5
+      tracking-[-0.02em]
+      text-secondary-default
+
+      subpixel-antialiased;
+  }
+}

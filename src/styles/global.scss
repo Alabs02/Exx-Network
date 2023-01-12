@@ -1,0 +1,27 @@
+// LIBRARY
+@import 'library';
+
+// CORE
+@import 'core';
+
+// FORMS
+@import 'forms';
+
+// NAVIGATION
+@import 'navigation';
+
+// LAYOUTS
+@import 'layouts';
+
+// PAGES
+@import 'pages';
+
+// SECTIONS
+@import 'sections';
+
+
+/* Override default variable */
+// $skeleton-element-color: var(--bg-accent-dark-100);
+
+/* Then import scss source file */
+@import 'skeleton-screen-css/dist/index.scss';

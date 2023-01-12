@@ -1,0 +1,47 @@
+.app-bar {
+  @apply
+    px-6
+    h-[100px]
+    flex
+    items-center
+    justify-between
+    
+    laptop:px-[100px];
+
+  &__logo {
+    &-link {
+      @apply
+        text-2xl
+        leading-8
+        font-bold
+        select-none
+        text-primary-dark
+        focus:text-primary-darker
+        font-space-grotesk;
+    }
+  }
+
+  &__actions {
+    @apply
+      flex
+      gap-x-[14px]
+      items-center;
+  }
+
+  &__square {
+    @apply
+      h-9
+      w-9
+      rounded-[10px]
+      overflow-hidden
+      bg-brand-teal-lighter
+      border
+      border-solid
+      border-brand-black-translucent
+      
+      grid
+      place-items-center
+      
+      laptop:hidden;
+  }
+}

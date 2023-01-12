@@ -1,0 +1,17 @@
+.app-layout {
+  width: 100%;
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-rows: 100px auto 130px;
+
+  &__content {
+    @apply
+      pt-10
+      pb-5
+      px-6
+      laptop:pt-[88px]
+      laptop:pb-[68px]
+      laptop:px-[100px];
+  }
+}
