@@ -6,8 +6,8 @@ interface IProps {
 }
 
 const TextBox: FC<IProps> = ({ isBuying, isWaitingToBuy, setAmount }) => {
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => setAmount(parseInt(e.target.value, 10));
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) =>
+    setAmount(parseInt(e.target.value, 10));
 
   return (
     <Fragment>

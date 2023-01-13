@@ -22,19 +22,23 @@ import { chains, client } from "@/client";
 import { persistor, store } from "@/store";
 
 // CLEAR CONSOLES IN PRODUCTION
-import { CleanConsole } from '@eaboy/clean-console';
+import { CleanConsole } from "@eaboy/clean-console";
 
 // APP ROOT
 const root = ReactDOM.createRoot(document.getElementById("app-root") as HTMLElement);
 
 const prodMode = import.meta.env.PROD;
 
-prodMode && CleanConsole.init({
-  initialMessages: [{
-    message: "We know you're a developer, but the console is forbidden!",
-    style: 'color: #174AFF; font-size: 28px; font-weight: bold; font-family: "Comic Sans MS", cursive, sans-serif; line-height: 38px;'
-  }]
-});
+prodMode &&
+  CleanConsole.init({
+    initialMessages: [
+      {
+        message: "We know you're a developer, but the console is forbidden!",
+        style:
+          'color: #174AFF; font-size: 28px; font-weight: bold; font-family: "Comic Sans MS", cursive, sans-serif; line-height: 38px;'
+      }
+    ]
+  });
 
 root.render(
   <WagmiConfig client={client}>

@@ -1,12 +1,13 @@
-# [EXX NETWORK DAPP](https://x)
-Presale is an ICO platform developed on BSC Testnet.
-<br />
+# [EXX NETWORK DAPP](https://exx-network-teal.vercel.app/)
 
+Presale is an ICO platform developed on BSC Testnet. <br />
 
 ### Application Setup
+
 ```bash
 npm install -S
 ```
+
 <br />
 
 ### To Start Development Server
@@ -14,29 +15,25 @@ npm install -S
 ```bash
 npm run dev --host
 ```
+
 <br />
 
-
 ### TECH STACK
+
 - React JS
 - TypecScript
 - Vite
 - Redux Toolkit
 - Wagmi
 - Rainbow Kit
-- Ether
-<br />
-<br />
-
+- Ether <br /> <br />
 
 ### FILE STRUCTURE & CODING STYLE
 
-My project file structure is inspired by Next JS and Vue JS
-<br />
-<br />
+My project file structure is inspired by Next JS and Vue JS <br /> <br />
 
 ### REACT JS CODING STYLE AND FILE NAMING CONVENTION
 
-My coding style is guided by [Airbnb-React-Convention](https://github.com/Alabs02/Airbnb-React-Convention). The SCSS is guide by [BEM Methodology](https://en.bem.info/methodology/quick-start/).
-
-
+My coding style is guided by
+[Airbnb-React-Convention](https://github.com/Alabs02/Airbnb-React-Convention). The SCSS is
+guide by [BEM Methodology](https://en.bem.info/methodology/quick-start/).

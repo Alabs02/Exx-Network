@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 
 // TOAST
 import cogoToast from "cogo-toast";
-import { ThreeDots } from  'react-loader-spinner';
+import { ThreeDots } from "react-loader-spinner";
 
 // ETHERS
 import { BigNumber, ethers } from "ethers";
@@ -152,16 +152,16 @@ const AccountSection = () => {
                   type={"button"}
                   className="card-form__btn"
                 >
-                  {
-                    !isBuying || !isWaitingToBuy
-                      ? 'Buy'
-                      : <ThreeDots 
-                          height="30" 
-                          width="30" 
-                          color="#E8F2FF" 
-                          ariaLabel="three-dots-loading"
-                        />
-                  }
+                  {!isBuying || !isWaitingToBuy ? (
+                    "Buy"
+                  ) : (
+                    <ThreeDots
+                      height="30"
+                      width="30"
+                      color="#E8F2FF"
+                      ariaLabel="three-dots-loading"
+                    />
+                  )}
                 </button>
               </div>
 
