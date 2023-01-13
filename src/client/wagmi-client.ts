@@ -1,6 +1,5 @@
-import { createClient, configureChains } from "wagmi";
 import { getDefaultWallets } from "@rainbow-me/rainbowkit";
-
+import { configureChains, createClient } from "wagmi";
 import { bscTestnet } from "wagmi/chains";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 
@@ -10,16 +9,16 @@ export const { chains, provider, webSocketProvider } = configureChains(
   [
     jsonRpcProvider({
       rpc: () => ({
-        http: import.meta.env.VITE_APP_BSC_RPC_URL,
-      }),
-    }),
-  ],
+        http: import.meta.env.VITE_APP_BSC_RPC_URL
+      })
+    })
+  ]
 );
 
 // Using Rainbow Kit
 export const { connectors } = getDefaultWallets({
   appName: "Exx Network Dapp",
-  chains,
+  chains
 });
 
 // Set up client
@@ -27,5 +26,5 @@ export const client = createClient({
   autoConnect: true,
   connectors,
   provider,
-  webSocketProvider,
+  webSocketProvider
 });

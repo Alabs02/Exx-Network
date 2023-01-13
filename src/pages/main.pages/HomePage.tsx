@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 
 // COMPONENTS
-
 // SECTIONS
 import { AccountSection, TimeLineSection } from "@/sections";
 

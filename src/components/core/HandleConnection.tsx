@@ -1,11 +1,10 @@
-import React, { Fragment } from "react";
-
 // COMPONENTS
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { AppButton } from "@/components/core";
+import React, { Fragment } from "react";
 
 // ASSETS
 import { staticIcons } from "@/assets/icons";
+import { AppButton } from "@/components/core";
 
 const HandleConnection = () => {
   return (
@@ -17,7 +16,7 @@ const HandleConnection = () => {
         openChainModal,
         openConnectModal,
         authenticationStatus,
-        mounted,
+        mounted
       }) => {
         const ready = mounted && authenticationStatus !== "loading";
 

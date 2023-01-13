@@ -3,7 +3,7 @@ export const BEP40TokenABI = [
     inputs: [],
     payable: false,
     stateMutability: "nonpayable",
-    type: "constructor",
+    type: "constructor"
   },
   {
     anonymous: false,
@@ -12,23 +12,23 @@ export const BEP40TokenABI = [
         indexed: true,
         internalType: "address",
         name: "owner",
-        type: "address",
+        type: "address"
       },
       {
         indexed: true,
         internalType: "address",
         name: "spender",
-        type: "address",
+        type: "address"
       },
       {
         indexed: false,
         internalType: "uint256",
         name: "value",
-        type: "uint256",
-      },
+        type: "uint256"
+      }
     ],
     name: "Approval",
-    type: "event",
+    type: "event"
   },
   {
     anonymous: false,
@@ -37,17 +37,17 @@ export const BEP40TokenABI = [
         indexed: true,
         internalType: "address",
         name: "previousOwner",
-        type: "address",
+        type: "address"
       },
       {
         indexed: true,
         internalType: "address",
         name: "newOwner",
-        type: "address",
-      },
+        type: "address"
+      }
     ],
     name: "OwnershipTransferred",
-    type: "event",
+    type: "event"
   },
   {
     anonymous: false,
@@ -58,11 +58,11 @@ export const BEP40TokenABI = [
         indexed: false,
         internalType: "uint256",
         name: "value",
-        type: "uint256",
-      },
+        type: "uint256"
+      }
     ],
     name: "Transfer",
-    type: "event",
+    type: "event"
   },
   {
     constant: true,
@@ -71,7 +71,7 @@ export const BEP40TokenABI = [
     outputs: [{ internalType: "uint8", name: "", type: "uint8" }],
     payable: false,
     stateMutability: "view",
-    type: "function",
+    type: "function"
   },
   {
     constant: true,
@@ -80,7 +80,7 @@ export const BEP40TokenABI = [
     outputs: [{ internalType: "string", name: "", type: "string" }],
     payable: false,
     stateMutability: "view",
-    type: "function",
+    type: "function"
   },
   {
     constant: true,
@@ -89,31 +89,31 @@ export const BEP40TokenABI = [
     outputs: [{ internalType: "string", name: "", type: "string" }],
     payable: false,
     stateMutability: "view",
-    type: "function",
+    type: "function"
   },
   {
     constant: true,
     inputs: [
       { internalType: "address", name: "owner", type: "address" },
-      { internalType: "address", name: "spender", type: "address" },
+      { internalType: "address", name: "spender", type: "address" }
     ],
     name: "allowance",
     outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     payable: false,
     stateMutability: "view",
-    type: "function",
+    type: "function"
   },
   {
     constant: false,
     inputs: [
       { internalType: "address", name: "spender", type: "address" },
-      { internalType: "uint256", name: "amount", type: "uint256" },
+      { internalType: "uint256", name: "amount", type: "uint256" }
     ],
     name: "approve",
     outputs: [{ internalType: "bool", name: "", type: "bool" }],
     payable: false,
     stateMutability: "nonpayable",
-    type: "function",
+    type: "function"
   },
   {
     constant: true,
@@ -122,7 +122,7 @@ export const BEP40TokenABI = [
     outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     payable: false,
     stateMutability: "view",
-    type: "function",
+    type: "function"
   },
   {
     constant: true,
@@ -131,19 +131,19 @@ export const BEP40TokenABI = [
     outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     payable: false,
     stateMutability: "view",
-    type: "function",
+    type: "function"
   },
   {
     constant: false,
     inputs: [
       { internalType: "address", name: "spender", type: "address" },
-      { internalType: "uint256", name: "subtractedValue", type: "uint256" },
+      { internalType: "uint256", name: "subtractedValue", type: "uint256" }
     ],
     name: "decreaseAllowance",
     outputs: [{ internalType: "bool", name: "", type: "bool" }],
     payable: false,
     stateMutability: "nonpayable",
-    type: "function",
+    type: "function"
   },
   {
     constant: true,
@@ -152,19 +152,19 @@ export const BEP40TokenABI = [
     outputs: [{ internalType: "address", name: "", type: "address" }],
     payable: false,
     stateMutability: "view",
-    type: "function",
+    type: "function"
   },
   {
     constant: false,
     inputs: [
       { internalType: "address", name: "spender", type: "address" },
-      { internalType: "uint256", name: "addedValue", type: "uint256" },
+      { internalType: "uint256", name: "addedValue", type: "uint256" }
     ],
     name: "increaseAllowance",
     outputs: [{ internalType: "bool", name: "", type: "bool" }],
     payable: false,
     stateMutability: "nonpayable",
-    type: "function",
+    type: "function"
   },
   {
     constant: false,
@@ -173,7 +173,7 @@ export const BEP40TokenABI = [
     outputs: [{ internalType: "bool", name: "", type: "bool" }],
     payable: false,
     stateMutability: "nonpayable",
-    type: "function",
+    type: "function"
   },
   {
     constant: true,
@@ -182,7 +182,7 @@ export const BEP40TokenABI = [
     outputs: [{ internalType: "string", name: "", type: "string" }],
     payable: false,
     stateMutability: "view",
-    type: "function",
+    type: "function"
   },
   {
     constant: true,
@@ -191,7 +191,7 @@ export const BEP40TokenABI = [
     outputs: [{ internalType: "address", name: "", type: "address" }],
     payable: false,
     stateMutability: "view",
-    type: "function",
+    type: "function"
   },
   {
     constant: false,
@@ -200,7 +200,7 @@ export const BEP40TokenABI = [
     outputs: [],
     payable: false,
     stateMutability: "nonpayable",
-    type: "function",
+    type: "function"
   },
   {
     constant: true,
@@ -209,7 +209,7 @@ export const BEP40TokenABI = [
     outputs: [{ internalType: "string", name: "", type: "string" }],
     payable: false,
     stateMutability: "view",
-    type: "function",
+    type: "function"
   },
   {
     constant: true,
@@ -218,32 +218,32 @@ export const BEP40TokenABI = [
     outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     payable: false,
     stateMutability: "view",
-    type: "function",
+    type: "function"
   },
   {
     constant: false,
     inputs: [
       { internalType: "address", name: "recipient", type: "address" },
-      { internalType: "uint256", name: "amount", type: "uint256" },
+      { internalType: "uint256", name: "amount", type: "uint256" }
     ],
     name: "transfer",
     outputs: [{ internalType: "bool", name: "", type: "bool" }],
     payable: false,
     stateMutability: "nonpayable",
-    type: "function",
+    type: "function"
   },
   {
     constant: false,
     inputs: [
       { internalType: "address", name: "sender", type: "address" },
       { internalType: "address", name: "recipient", type: "address" },
-      { internalType: "uint256", name: "amount", type: "uint256" },
+      { internalType: "uint256", name: "amount", type: "uint256" }
     ],
     name: "transferFrom",
     outputs: [{ internalType: "bool", name: "", type: "bool" }],
     payable: false,
     stateMutability: "nonpayable",
-    type: "function",
+    type: "function"
   },
   {
     constant: false,
@@ -252,6 +252,6 @@ export const BEP40TokenABI = [
     outputs: [],
     payable: false,
     stateMutability: "nonpayable",
-    type: "function",
-  },
+    type: "function"
+  }
 ];

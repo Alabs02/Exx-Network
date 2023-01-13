@@ -1,22 +1,20 @@
+// INTERFACES
+import type { MenuProps } from "antd";
+// COMPONENTS
+import { Dropdown } from "antd";
 import React, { Fragment } from "react";
 import { NavLink } from "react-router-dom";
 
-// COMPONENTS
-import { Dropdown } from "antd";
-import { AppButton, TextButton, HandleConnection } from "@/components/core";
-
+import { staticIcons } from "@/assets/icons";
 // ASSETS
 import { staticImg } from "@/assets/images";
-import { staticIcons } from "@/assets/icons";
-
-// INTERFACES
-import type { MenuProps } from "antd";
+import { AppButton, HandleConnection, TextButton } from "@/components/core";
 
 const AppBar = () => {
   const items: MenuProps["items"] = [
     {
-      type: "divider",
-    },
+      type: "divider"
+    }
   ];
 
   return (

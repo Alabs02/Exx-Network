@@ -1,4 +1,4 @@
-import React, { Fragment, FC } from "react";
+import React, { FC, Fragment } from "react";
 
 // INTERFACES
 export interface IAppProgressProps {

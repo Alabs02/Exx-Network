@@ -1,7 +1,6 @@
-import React, { Fragment } from "react";
-
 // COMPONENT
 import { Timeline } from "antd";
+import React, { Fragment } from "react";
 
 // ASSETS
 import { staticIcons } from "@/assets/icons";

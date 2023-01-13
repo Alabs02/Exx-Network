@@ -1,15 +1,12 @@
-import { BEP40TokenABI, presaleContractABI } from "@/contracts";
+// import { BEP40TokenABI, presaleContractABI } from "@/contracts";
 
-export const USDT_SMART_CONTRACT_ADDRESS = "0x337610d27c682E347C9cD60BD4b3b107C9d34dDd";
+// export const USDT_SMART_CONTRACT = {
+//   abi: BEP40TokenABI,
+//   address: import.meta.env.VITE_APP_USDT_SMART_CONTRACT_ADDR
+// };
 
-export const PRESALE_SMART_CONTROL_ADDRESS = "0xDA497727316FBDD71D2b555041035c6641c0D85F";
-
-export const USDT_SMART_CONTRACT = {
-  abi: BEP40TokenABI,
-  address: USDT_SMART_CONTRACT_ADDRESS,
-};
-
-export const PRESALE_SMART_CONTRACT = {
-  abi: presaleContractABI,
-  address: PRESALE_SMART_CONTROL_ADDRESS,
-};
+// export const PRESALE_SMART_CONTRACT = {
+//   abi: presaleContractABI,
+//   address: import.meta.env.VITE_APP_PRESALE_SMART_CONTRACT_ADDR
+// };
+export {};

@@ -1,46 +1,63 @@
 import React, { Fragment, useEffect, useState } from "react";
 
+// TOAST
+import cogoToast from "cogo-toast";
+import { ThreeDots } from  'react-loader-spinner';
+
 // ETHERS
 import { BigNumber, ethers } from "ethers";
+
+// HOOKS
+import {
+  useAccount,
+  useContractRead,
+  useContractWrite,
+  useWaitForTransaction
+} from "wagmi";
 
 // COMPONENTS
 import { AppProgress, TextBox } from "@/components/forms";
 
+// CONTRACT
+import { presaleContractABI, BEP40TokenABI } from "@/contracts";
+
 // SERVICES
 import { $number } from "@/services";
-
-// HOOKS
-import { useAccount, useContractRead } from "wagmi";
-
-// CONTRACT
-import { PRESALE_SMART_CONTRACT, USDT_SMART_CONTRACT } from "@/contracts";
 
 const AccountSection = () => {
   const { address } = useAccount();
 
+  // STATE
+  const [amount, setAmount] = useState<number>(0);
+  const [time, setTime] = useState(new Date().toLocaleTimeString());
+
   const { data: balanceOf } = useContractRead({
-    ...USDT_SMART_CONTRACT,
+    abi: BEP40TokenABI,
+    address: import.meta.env.VITE_APP_USDT_SMART_CONTRACT_ADDR,
     functionName: "balanceOf",
-    args: [address ?? "0x0"],
+    args: [address ?? "0x0"]
   });
 
   const { data: symbol } = useContractRead({
-    ...USDT_SMART_CONTRACT,
-    functionName: "symbol",
+    abi: BEP40TokenABI,
+    address: import.meta.env.VITE_APP_USDT_SMART_CONTRACT_ADDR,
+    functionName: "symbol"
   });
 
   const { data: raisedBNB } = useContractRead({
-    ...PRESALE_SMART_CONTRACT,
-    functionName: "raisedBNB",
+    abi: presaleContractABI,
+    address: import.meta.env.VITE_APP_PRESALE_SMART_CONTRACT_ADDR,
+    functionName: "raisedBNB"
   });
 
   const { data: hardCap } = useContractRead({
-    ...PRESALE_SMART_CONTRACT,
-    functionName: "hardCap",
+    abi: presaleContractABI,
+    address: import.meta.env.VITE_APP_PRESALE_SMART_CONTRACT_ADDR,
+    functionName: "hardCap"
   });
 
   const _balanceOf =
-    balanceOf && $number.convertToNumber((balanceOf as any)._hex  ?? BigNumber.from(0));
+    balanceOf && $number.convertToNumber((balanceOf as any)._hex ?? BigNumber.from(0));
 
   const _raisedBnb: BigNumber = raisedBNB ? (raisedBNB as BigNumber) : BigNumber.from(0);
   const _hardCap: BigNumber = hardCap ? (hardCap as BigNumber) : BigNumber.from(0);
@@ -50,7 +67,43 @@ const AccountSection = () => {
       Number(ethers.utils.formatUnits(_hardCap))) *
     100;
 
-  const [time, setTime] = useState(new Date().toLocaleTimeString());
+  const toastConfig: any = {
+    position: "top-right"
+  };
+
+  const {
+    data: buyData,
+    error: buyError,
+    isLoading: isBuying,
+    write: buy
+  } = useContractWrite({
+    mode: "recklesslyUnprepared",
+    address: import.meta.env.VITE_APP_PRESALE_SMART_CONTRACT_ADDR,
+    abi: presaleContractABI,
+    functionName: "buy",
+    overrides: {
+      value: ethers.utils.parseEther(amount.toString() || "0")
+    },
+
+    onError(error: any) {
+      cogoToast.error(`Failed! ${error?.reason}`, toastConfig);
+    }
+  });
+
+  const { isLoading: isWaitingToBuy } = useWaitForTransaction({
+    hash: buyData?.hash,
+    onSuccess(data: any) {
+      setAmount(0);
+      cogoToast.success("Successful!", toastConfig);
+    },
+    onError(error: any) {
+      cogoToast.error(`Failed! ${error.reason}`, toastConfig);
+    }
+  });
+
+  const handleBuy = (): void => {
+    buy?.();
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -64,7 +117,7 @@ const AccountSection = () => {
     <Fragment>
       <section className="acct-section">
         <div className="acct-section__badge">
-          Your bal: {`${_balanceOf ?? 0.0} ${symbol ?? 'USDT'}`}
+          Your bal: {`${_balanceOf ?? 0.0} ${symbol ?? "USDT"}`}
         </div>
 
         <div className="acct-section__card">
@@ -87,9 +140,29 @@ const AccountSection = () => {
               </label>
 
               <div className="card-form__panel">
-                <TextBox />
+                <TextBox
+                  isBuying={isBuying}
+                  isWaitingToBuy={isWaitingToBuy}
+                  setAmount={setAmount}
+                />
 
-                <button className="card-form__btn">Buy</button>
+                <button
+                  disabled={isBuying || isWaitingToBuy}
+                  onClick={handleBuy}
+                  type={"button"}
+                  className="card-form__btn"
+                >
+                  {
+                    !isBuying || !isWaitingToBuy
+                      ? 'Buy'
+                      : <ThreeDots 
+                          height="30" 
+                          width="30" 
+                          color="#E8F2FF" 
+                          ariaLabel="three-dots-loading"
+                        />
+                  }
+                </button>
               </div>
 
               <div className="card-form__desc">

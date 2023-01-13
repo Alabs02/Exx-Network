@@ -1,5 +1,5 @@
-import React, { Fragment, FC } from "react";
 import classNames from "classnames";
+import React, { FC, Fragment } from "react";
 
 // INTERFACES
 import { IComponent } from "@/interfaces";
@@ -11,11 +11,11 @@ const AppButton: FC<IComponent.IAppButtonProps> = ({
   hasIcon,
   imgAlt = "icon",
   color = "#111315",
-  classes = [],
+  classes = []
 }) => {
   const buttonClassNames = classes.map((btnClass: string) => {
     const result = {
-      [btnClass]: true,
+      [btnClass]: true
     };
     return result;
   });

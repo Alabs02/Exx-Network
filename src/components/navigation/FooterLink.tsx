@@ -1,4 +1,4 @@
-import React, { Fragment, FC } from "react";
+import React, { FC, Fragment } from "react";
 import { Link } from "react-router-dom";
 
 // INTERFACES
@@ -8,7 +8,7 @@ const FooterLink: FC<IComponent.IFooterLinkProps> = ({
   label,
   to,
   classes = [],
-  command,
+  command
 }) => {
   const footerLinkClassNames = classes.join(" ");
 

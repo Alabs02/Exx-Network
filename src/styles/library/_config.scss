@@ -41,4 +41,23 @@ body {
   }
 }
 
+::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: lighten($color: #e8f2ff, $amount: 10%);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: lighten($color: #e8f2ff, $amount: 0%);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: darken($color: #174AFF, $amount: 0%);
+
+  &:hover {
+    background-color: darken($color: #174AFF, $amount: 10%);
+  }
+}
+
 

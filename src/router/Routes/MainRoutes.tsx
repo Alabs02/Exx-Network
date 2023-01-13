@@ -2,10 +2,8 @@ import { Fragment } from "react";
 import { Route } from "react-router-dom";
 
 // MIDDLEWARES
-
 // LAYOUTS
 import { AppLayout } from "@/layouts";
-
 // PAGES
 import { HomePage } from "@/pages/main.pages";
 
